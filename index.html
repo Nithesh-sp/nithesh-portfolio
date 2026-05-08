@@ -3,96 +3,826 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nithesh | DevOps Engineer</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <title>Portfolio - Home</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: black;
+      color: white;
+    }
+
+    /* ===== NAVBAR ===== */
+    .navbar {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      align-items: center;
+      padding: 20px 60px;
+
+      position: fixed; /* Fixes the position relative to the viewport */
+      top: 0;          /* Sticks to the very top */
+      left: 0;         /* Ensures it spans from the left edge */
+      width: 100%;     /* Spans full width */
+      z-index: 1000;   /* Keeps it on top of other content */
+      box-sizing: border-box; /* Ensures padding doesn't affect width */
+      
+    }
+
+    .logo {
+      width: 100px;       /* Set a size that fits your navbar height */
+      height: 50px;      /* Keep width and height equal for a square */
+      display: flex;     /* Centers the image inside */
+      align-items: center;
+    }
+
+    .logo img {
+      width: 100%;       /* Makes the image fill the square */
+      height: auto;      /* Maintains aspect ratio */
+      display: block;
+    }
+    
+
+    .nav-center {
+      text-align: center;
+    }
+
+    .nav-center a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: gold;
+      transition: 0.3s;
+    }
+
+    .nav-center a:hover {
+      color: white;
+    }
+
+    .cv-btn {
+      justify-self: end;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 18px;
+      border: 1px solid gold;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: 0.3s;
+    }
+
+    .cv-btn:hover {
+      background: gold;
+      color: black;
+    }
+
+    .download-icon {
+      width: 16px;
+      height: 16px;
+      background: gray; /* dummy icon */
+    }
+
+    /* ===== HERO SECTION ===== */
+    .hero {
+      margin-top: 10vh;
+      display: grid;
+      grid-template-columns: 1fr 0.6fr 1fr;
+      align-items: center;
+      height: calc(100vh - 80px);
+      padding: 40px 60px;
+    }
+    
+    .hero-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between; /* Spreads elements from top to bottom */
+      height: 20%; /* Ensures it fills the grid cell height */
+      min-height: 150px; /* Adjust based on your design preference */
+      width: 70%;
+   }
+
+    .hero-left h2:first-child {
+      color: gold;
+      align-self: flex-start;   /* Upper left */
+      margin: 0;
+    }
+
+    .hero-left h1 {
+      align-self: center;      /* Center middle */
+      font-size: 48px;
+      margin: 0;
+    }
+
+    .hero-left .role {
+      color: gold;
+      align-self: flex-end;    /* Bottom right */
+      margin: 0;
+    }
+
+    .hero-image {
+      width: 100%;
+      height: 80vh;
+      background: gray;
+      border-radius: 20px;
+      margin: auto;
+    }
+    
+   .hero-image img {
+      width: 100%;          
+      height: 100%;         
+      object-fit: cover;    
+    }
+    
+    .hero-right {
+      padding-left: 40px;
+      color: white;
+    }
+
+/* ===== ABOUT SECTION ===== */
+    .about {
+      display: flex;
+      align-items: center;
+      height: calc(100vh - 80px);
+      padding: 40px 60px;
+      gap: 10%; /* 10% spacing between image and text */
+    }
+
+    .about-image {
+      width: 40%;
+      height: 100%;
+      background: gray;
+      border-radius: 20px;
+    }
+
+    .about-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 20px;
+    }
+
+    .about-text {
+      width: 40%;
+    }
+
+    .about-text h2 {
+      color: gold;
+      margin-bottom: 20px;
+    }
+
+    .about-text p {
+      line-height: 1.6;
+    }
+  
+  /* Skills section */
+
+ /* TITLE */
+    .skills-title {
+      padding: 60px 0 20px 60px;
+      font-size: 32px;
+      color: gold;
+    }
+
+    /* MAIN CONTAINER */
+    .skills-wrapper {
+      max-width: 1100px;
+      margin: auto;
+      padding: 40px 60px 80px;
+    }
+
+    /* CATEGORY BLOCK */
+    .skill-category {
+      margin-bottom: 50px;
+    }
+
+    .skill-category h3 {
+      margin-bottom: 20px;
+      font-size: 18px;
+      color: gold;
+    }
+
+    /* GRID FOR ICONS */
+    .skill-row {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 30px;
+    }
+
+    /* CIRCLE CARD */
+    .skill-card {
+      position: relative;
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      background: #111;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .skill-card:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 10px gold;
+    }
+
+    .skill-card img {
+      width: 60%;
+      height: 60%;
+      object-fit: contain;
+    }
+
+    /* OVERLAY */
+    .skill-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 215, 0, 0.2);
+      backdrop-filter: blur(4px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: 0.3s ease;
+      font-size: 12px;
+      text-align: center;
+      padding: 5px;
+    }
+
+    .skill-card:hover .skill-overlay {
+      opacity: 1;
+    }
+   
+ /* PROJECT SECTION */
+ /* ===== TITLE ===== */
+    .projects-title { padding: 60px 0 0 60px; font-size: 32px; color: gold; }
+
+    /* ===== GRID CONTAINER ===== */
+    .projects-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      padding: 60px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    /* ===== CARD ===== */
+    .project-card {
+      position: relative;
+      height: 200px;
+      background: #111;
+      border-radius: 12px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .project-card:hover { transform: scale(1.05); }
+
+    /* ===== IMAGE (default content) ===== */
+    .project-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* ===== HOVER LAYER ===== */
+    .overlay {
+      position: absolute;
+      bottom: -100%;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 215, 0, 0.15);
+      backdrop-filter: blur(4px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+      transition: 0.4s ease;
+    }
+
+    .project-card:hover .overlay { bottom: 0; }
+
+    .overlay h3 { color: gold; margin-bottom: 10px; }
+    .overlay p { font-size: 14px; color: white; }
+
+    /* ===== LINK WRAPPER ===== */
+    .card-link { text-decoration: none; color: inherit; }
+
+   /* BLOG SECTION */
+   /* ===== TITLE ===== */
+    .blogs-title {
+      padding: 60px 0 0 60px;
+      font-size: 32px;
+      color: gold;
+    }
+
+    /* ===== GRID ===== */
+    .blogs-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      padding: 60px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    /* ===== BLOG CARD ===== */
+    .blog-card {
+      background: #111;
+      border-radius: 12px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .blog-card:hover {
+      transform: scale(1.05);
+    }
+
+    /* IMAGE SECTION (60%) */
+    .blog-image {
+      height: 60%;
+      width: 100%;
+      background: gray;
+    }
+
+    .blog-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* CONTENT SECTION (40%) */
+    .blog-content {
+      height: 40%;
+      padding: 15px;
+      display: flex;
+      align-items: center;
+    }
+
+    .blog-content h2 {
+      font-size: 18px;
+      line-height: 1.4;
+    }
+
+   /* EXPERIENCE SECTION */
+
+   /* ===== TITLE ===== */
+    .exp-title {
+      padding: 60px 0 0 60px;
+      font-size: 32px;
+      color: gold;
+    }
+
+    /* ===== CONTAINER ===== */
+    .exp-container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 60px;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    /* ===== CARD ===== */
+    .exp-card {
+      background: #111;
+      border-radius: 12px;
+      padding: 30px;
+      transition: 0.3s;
+      border-left: 4px solid gold;
+    }
+
+    .exp-card:hover {
+      transform: scale(1.02);
+      box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+    }
+
+    /* HEADER */
+    .exp-header {
+      margin-bottom: 15px;
+    }
+
+    .exp-role {
+      font-size: 20px;
+      color: white;
+      font-weight: bold;
+    }
+
+    .exp-company {
+      color: gold;
+      margin-top: 5px;
+    }
+
+    .exp-duration {
+      font-size: 14px;
+      color: #aaa;
+      margin-top: 5px;
+    }
+
+    /* DESCRIPTION */
+    .exp-desc {
+      margin-top: 15px;
+      line-height: 1.6;
+      color: #ddd;
+    }
+
+  /* FOOTER SECTION */
+
+  .footer {
+  background: #111;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 60px;
+  margin-top: 80px;
+  border-top: 1px solid rgba(255, 215, 0, 0.2);
+}
+
+.footer-container {
+  background: #111;
+  color: white;
+  margin-top: 80px;
+  border-top: 1px solid rgba(255, 215, 0, 0.2);
+  padding: 30px 60px;
+}
+
+/* LEFT */
+.footer-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.location-icon {
+  width: 20px;
+  height: 20px;
+  background: gray; /* dummy */
+  border-radius: 4px;
+}
+
+.location-text {
+  font-size: 14px;
+  color: #ccc;
+}
+
+/* CENTER */
+.footer-center {
+  text-align: center;
+  font-size: 14px;
+  color: #ccc;
+}
+
+/* RIGHT */
+.footer-right {
+  display: flex;
+  gap: 15px;
+}
+
+.footer-right img {
+  width: 28px;
+  height: 28px;
+  background: gray; /* placeholder */
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.footer-right img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 8px gold;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+ 
+/* COPYRIGHT */
+.footer-bottom {
+  text-align: center;
+  font-size: 13px;
+  color: #777;
+  padding-top: 20px; /* Space above copyright */
+  margin-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05); /* Optional divider */
+}
+  </style>
 </head>
 <body>
 
-<!-- NAVBAR -->
-<nav>
-  <h2>Nithesh</h2>
-  <ul>
-    <li><a href="#about">About</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-</nav>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="logo"><img src="logo.png"></div>
 
-<!-- HERO -->
-<section class="hero">
-  <h1>DevOps Engineer</h1>
-  <p>Building scalable, automated, and cloud-native systems.</p>
-  <div class="buttons">
-    <a href="#" class="btn">View Resume</a>
-    <a href="https://github.com/" target="_blank" class="btn secondary">GitHub</a>
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section id="about">
-  <h2>About Me</h2>
-  <p>
-    I am a DevOps Engineer with experience in CI/CD, containerization,
-    and cloud infrastructure. I focus on building scalable systems using
-    Docker, Kubernetes, and AWS while ensuring automation and reliability.
-  </p>
-</section>
-
-<!-- SKILLS -->
-<section id="skills">
-  <h2>Skills</h2>
-  <div class="grid">
-    <div class="card">
-      <h3>Cloud</h3>
-      <p>AWS, EKS</p>
+    <div class="nav-center">
+      <a href="#">About</a>
+      <a href="#">Skills</a>
+      <a href="#">Projects</a>
+      <a href="#">Blog</a>
     </div>
-    <div class="card">
-      <h3>CI/CD</h3>
-      <p>Jenkins, GitHub Actions</p>
+
+    <a href="#" class="cv-btn">
+      Download CV
+      <div class="download-icon"></div>
+    </a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+
+    <!-- LEFT TEXT -->
+    <div class="hero-left">
+      <h2>Hi there , I'm</h2>
+      <h1>NITHESH S P</h1>
+      <h2 class="role">DEVOPS ENGINEER</h2>
     </div>
-    <div class="card">
-      <h3>Containers</h3>
-      <p>Docker, Kubernetes</p>
+
+    <!-- CENTER IMAGE -->
+    <div class="hero-image"><img src="Nithesh_hero.png"></div>
+
+    <!-- RIGHT TEXT -->
+    <div class="hero-right">
+      <p>
+        I build scalable cloud infrastructure, automate CI/CD pipelines, and create reliable production-ready systems using modern DevOps practices.
+      </p>
     </div>
-    <div class="card">
-      <h3>Monitoring</h3>
-      <p>Prometheus, Grafana</p>
+
+  </section>
+
+   <!-- ABOUT SECTION -->
+
+  <section class="about">
+
+    <!-- LEFT IMAGE -->
+    <div class="about-image">
+      <img src="about_me.png" alt="About Image">
+    </div>
+
+    <!-- RIGHT TEXT -->
+    <div class="about-text">
+      <h2>About Me</h2>
+      <p>
+        I am a DevOps Engineer specializing in building scalable infrastructure,
+        automating CI/CD pipelines, and ensuring high availability systems. I enjoy
+        working with cloud technologies, containerization, and modern deployment
+        strategies to deliver efficient and reliable applications.
+      </p>
+    </div>
+
+  </section>
+ 
+<!-- SKILLS SECTION -->
+<h2 class="skills-title">Skills</h2>
+
+  <section class="skills-wrapper">
+
+    <!-- CATEGORY 1 -->
+    <div class="skill-category">
+      <h3>Continuous Integration & Continuous Deployment (CI/CD)</h3>
+      <div class="skill-row">
+        <div class="skill-card"><img src="https://via.placeholder.com/60"><div class="skill-overlay">Jenkins</div></div>
+        <div class="skill-card"><img src="https://via.placeholder.com/60"><div class="skill-overlay">GitHub Actions</div></div>
+        <div class="skill-card"><img src="https://via.placeholder.com/60"><div class="skill-overlay">GitLab CI</div></div>
+        <div class="skill-card"><img src="https://via.placeholder.com/60"><div class="skill-overlay">ArgoCD</div></div>
+        <div class="skill-card"><img src="https://via.placeholder.com/60"><div class="skill-overlay">CircleCI</div></div>
+      </div>
+    </div>
+
+    <!-- CATEGORY 3 -->
+    <div class="skill-category">
+      <h3>Containerization & Orchestration</h3>
+      <div class="skill-row">
+        <div class="skill-card"><img src="https://via.placeholder.com/60"><div class="skill-overlay">Docker</div></div>
+        <div class="skill-card"><img src="https://via.placeholder.com/60"><div class="skill-overlay">Kubernetes</div></div>
+        <div class="skill-card"><img src="https://via.placeholder.com/60"><div class="skill-overlay">Helm</div></div>
+        <div class="skill-card"><img src="https://via.placeholder.com/60"><div class="skill-overlay">OpenShift</div></div>
+        <div class="skill-card"><img src="https://via.placeholder.com/60"><div class="skill-overlay">Docker Swarm</div></div>
+      </div>
+    </div>
+
+    <!-- CATEGORY 4 -->
+    <div class="skill-category">
+      <h3>Infrastructure as Code (IaC)</h3>
+      <div class="skill-row">
+        <div class="skill-card"><img src="https://via.placeholder.com/60"><div class="skill-overlay">Terraform</div></div>
+        <div class="skill-card"><img src="https://via.placeholder.com/60"><div class="skill-overlay">Ansible</div></div>
+        <div class="skill-card"><img src="https://via.placeholder.com/60"><div class="skill-overlay">CloudFormation</div></div>
+        <div class="skill-card"><img src="https://via.placeholder.com/60"><div class="skill-overlay">Pulumi</div></div>
+        <div class="skill-card"><img src="https://via.placeholder.com/60"><div class="skill-overlay">Vagrant</div></div>
+      </div>
+    </div>
+
+    <!-- CATEGORY 5 -->
+    <div class="skill-category">
+      <h3>Monitoring & Observability</h3>
+      <div class="skill-row">
+        <div class="skill-card"><img src="https://via.placeholder.com/60"><div class="skill-overlay">Prometheus</div></div>
+        <div class="skill-card"><img src="https://via.placeholder.com/60"><div class="skill-overlay">Grafana</div></div>
+        <div class="skill-card"><img src="https://via.placeholder.com/60"><div class="skill-overlay">ELK Stack</div></div>
+        <div class="skill-card"><img src="https://via.placeholder.com/60"><div class="skill-overlay">Datadog</div></div>
+        <div class="skill-card"><img src="https://via.placeholder.com/60"><div class="skill-overlay">New Relic</div></div>
+      </div>
+    </div>
+
+    <!-- CATEGORY 6 -->
+    <div class="skill-category">
+      <h3>Cloud Computing & Networking</h3>
+      <div class="skill-row">
+        <div class="skill-card"><img src="https://via.placeholder.com/60"><div class="skill-overlay">AWS</div></div>
+        <div class="skill-card"><img src="https://via.placeholder.com/60"><div class="skill-overlay">Azure</div></div>
+        <div class="skill-card"><img src="https://via.placeholder.com/60"><div class="skill-overlay">GCP</div></div>
+        <div class="skill-card"><img src="https://via.placeholder.com/60"><div class="skill-overlay">VPC</div></div>
+        <div class="skill-card"><img src="https://via.placeholder.com/60"><div class="skill-overlay">DNS</div></div>
+      </div>
+    </div>
+
+    <!-- CATEGORY 7 -->
+    <div class="skill-category">
+      <h3>Security (DevSecOps)</h3>
+      <div class="skill-row">
+        <div class="skill-card"><img src="https://via.placeholder.com/60"><div class="skill-overlay">Trivy</div></div>
+        <div class="skill-card"><img src="https://via.placeholder.com/60"><div class="skill-overlay">SonarQube</div></div>
+        <div class="skill-card"><img src="https://via.placeholder.com/60"><div class="skill-overlay">Snyk</div></div>
+        <div class="skill-card"><img src="https://via.placeholder.com/60"><div class="skill-overlay">OWASP</div></div>
+        <div class="skill-card"><img src="https://via.placeholder.com/60"><div class="skill-overlay">Vault</div></div>
+      </div>
+    </div>
+
+  </section>
+
+
+<!-- PROJECT SECTION -->
+  <h2 class="projects-title">Projects</h2>
+
+  <!-- GRID -->
+  <section class="projects-container">
+
+    <!-- CARD 1 -->
+    <a href="https://github.com/" target="_blank" class="card-link">
+      <div class="project-card">
+        <img src="https://via.placeholder.com/400x300" alt="Architecture Diagram">
+        <div class="overlay">
+          <h3>Project 1</h3>
+          <p>CI/CD pipeline with Docker & Jenkins</p>
+        </div>
+      </div>
+    </a>
+
+    <!-- CARD 2 -->
+    <a href="https://github.com/" target="_blank" class="card-link">
+      <div class="project-card">
+        <img src="https://via.placeholder.com/400x300" alt="Architecture Diagram">
+        <div class="overlay">
+          <h3>Project 2</h3>
+          <p>Kubernetes deployment with monitoring</p>
+        </div>
+      </div>
+    </a>
+
+    <!-- CARD 3 -->
+    <a href="https://github.com/" target="_blank" class="card-link">
+      <div class="project-card">
+        <img src="https://via.placeholder.com/400x300" alt="Architecture Diagram">
+        <div class="overlay">
+          <h3>Project 3</h3>
+          <p>NGINX load balancing setup</p>
+        </div>
+      </div>
+    </a>
+</section>
+ 
+<!-- BLOG SECTION -->
+  <h2 class="blogs-title">Blogs</h2>
+
+  <!-- GRID -->
+  <section class="blogs-container">
+
+    <!-- BLOG 1 -->
+    <div class="blog-card">
+      <div class="blog-image"><img src="https://via.placeholder.com/400x300"></div>
+      <div class="blog-content"><h2>Understanding CI/CD Pipelines</h2></div>
+    </div>
+
+    <!-- BLOG 2 -->
+    <div class="blog-card">
+      <div class="blog-image"><img src="https://via.placeholder.com/400x300"></div>
+      <div class="blog-content"><h2>Docker for Beginners</h2></div>
+    </div>
+
+    <!-- BLOG 3 -->
+    <div class="blog-card">
+      <div class="blog-image"><img src="https://via.placeholder.com/400x300"></div>
+      <div class="blog-content"><h2>Kubernetes Basics Explained</h2></div>
+    </div>
+
+    <!-- BLOG 4 -->
+    <div class="blog-card">
+      <div class="blog-image"><img src="https://via.placeholder.com/400x300"></div>
+      <div class="blog-content"><h2>Terraform for Infrastructure</h2></div>
+    </div>
+
+    <!-- BLOG 5 -->
+    <div class="blog-card">
+      <div class="blog-image"><img src="https://via.placeholder.com/400x300"></div>
+      <div class="blog-content"><h2>Monitoring with Prometheus</h2></div>
+    </div>
+
+    <!-- BLOG 6 -->
+    <div class="blog-card">
+      <div class="blog-image"><img src="https://via.placeholder.com/400x300"></div>
+      <div class="blog-content"><h2>NGINX Load Balancing Guide</h2></div>
+    </div>
+
+  </section>
+
+   <!-- EXPERIENCE SECTION -->
+  <h2 class="exp-title">Experience</h2>
+
+  <!-- CONTENT -->
+  <section class="exp-container">
+
+    <!-- EXPERIENCE 1 -->
+    <div class="exp-card">
+      <div class="exp-header">
+        <div class="exp-role">DevOps Engineer</div>
+        <div class="exp-company">Company One</div>
+        <div class="exp-duration">Jan 2024 – Present</div>
+      </div>
+
+      <div class="exp-desc">
+        Worked on building CI/CD pipelines using Jenkins and Docker.
+        Managed Kubernetes deployments and implemented monitoring
+        using Prometheus and Grafana. Improved system reliability
+        and reduced deployment time significantly.
+      </div>
+    </div>
+
+    <!-- EXPERIENCE 2 -->
+    <div class="exp-card">
+      <div class="exp-header">
+        <div class="exp-role">Junior DevOps Engineer</div>
+        <div class="exp-company">Company Two</div>
+        <div class="exp-duration">Jun 2023 – Dec 2023</div>
+      </div>
+
+      <div class="exp-desc">
+        Assisted in automating infrastructure using Terraform and Ansible.
+        Worked on containerization with Docker and supported cloud
+        deployments on AWS. Collaborated with development teams to
+        streamline build and release processes.
+      </div>
+    </div>
+
+  </section>
+  
+<!-- FOOTER SECTION -->
+<footer class="footer-container">
+  <!-- Top Section: Contains the 3 columns -->
+  <div class="footer-top">
+    <!-- LEFT -->
+    <div class="footer-left">
+      <div class="location-icon"></div>
+      <div class="location-text">Your Location Here</div>
+    </div>
+
+    <!-- CENTER -->
+    <div class="footer-center">
+      <div>Email: youremail@example.com</div>
+      <div>Phone: +91 00000 00000</div>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="footer-right">
+      <a href="#" target="_blank"><img src="linkedin.png" alt="LinkedIn"></a>
+      <a href="#" target="_blank"><img src="github.png" alt="GitHub"></a>
     </div>
   </div>
-</section>
 
-<!-- PROJECTS -->
-<section id="projects">
-  <h2>Projects</h2>
-
-  <div class="project-card">
-    <h3>CI/CD Pipeline Automation</h3>
-    <p>End-to-end pipeline using Jenkins, Docker, and Kubernetes.</p>
-    <a href="#">View Project</a>
+  <!-- Bottom Section: Separate line -->
+  <div class="footer-bottom">
+    © 2026 Nithesh S P. All rights reserved.
   </div>
-
-  <div class="project-card">
-    <h3>Django DevOps Deployment</h3>
-    <p>Deployed Django app using Docker, NGINX, and Kubernetes.</p>
-    <a href="#">View Project</a>
-  </div>
-
-</section>
-
-<!-- CONTACT -->
-<section id="contact">
-  <h2>Contact</h2>
-  <p>Email: yourmail@gmail.com</p>
-  <p>LinkedIn: linkedin.com/in/yourprofile</p>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <p>© 2026 Nithesh</p>
 </footer>
 
-<script src="script.js"></script>
+
+
 </body>
 </html>
