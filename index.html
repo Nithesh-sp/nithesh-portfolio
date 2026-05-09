@@ -3,20 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
   <title>Portfolio - Home</title>
-
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: Arial, sans-serif;
+      font-family: 'Poppins', sans-serif;
     }
 
     body {
       background: black;
       color: white;
-    }
+     }
 
     /* ===== NAVBAR ===== */
     .navbar {
@@ -24,7 +24,6 @@
       grid-template-columns: 1fr 1fr 1fr;
       align-items: center;
       padding: 20px 60px;
-
       position: fixed; /* Fixes the position relative to the viewport */
       top: 0;          /* Sticks to the very top */
       left: 0;         /* Ensures it spans from the left edge */
@@ -35,8 +34,8 @@
     }
 
     .logo {
-      width: 100px;       /* Set a size that fits your navbar height */
-      height: 50px;      /* Keep width and height equal for a square */
+      width: 150px;       /* Set a size that fits your navbar height */
+      height: 75px;      /* Keep width and height equal for a square */
       display: flex;     /* Centers the image inside */
       align-items: center;
     }
@@ -55,7 +54,7 @@
     .nav-center a {
       margin: 0 15px;
       text-decoration: none;
-      color: gold;
+      color: #d4a937;
       transition: 0.3s;
     }
 
@@ -69,7 +68,8 @@
       align-items: center;
       gap: 10px;
       padding: 10px 18px;
-      border: 1px solid gold;
+      border: 1px solid #d4a937;
+      
       color: white;
       text-decoration: none;
       border-radius: 8px;
@@ -77,14 +77,8 @@
     }
 
     .cv-btn:hover {
-      background: gold;
+      background: #d4a937;
       color: black;
-    }
-
-    .download-icon {
-      width: 16px;
-      height: 16px;
-      background: gray; /* dummy icon */
     }
 
     /* ===== HERO SECTION ===== */
@@ -97,32 +91,60 @@
       padding: 40px 60px;
     }
     
-    .hero-left {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between; /* Spreads elements from top to bottom */
-      height: 20%; /* Ensures it fills the grid cell height */
-      min-height: 150px; /* Adjust based on your design preference */
-      width: 70%;
-   }
+   .hero-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centers content vertically */
+  gap: 10px;               /* Adds spacing between the text lines */
+  width: 100%;
+}
 
-    .hero-left h2:first-child {
-      color: gold;
-      align-self: flex-start;   /* Upper left */
-      margin: 0;
-    }
+.hero-left h3 {
+  color: #d4a937;
+  margin: 0;
+  font-size: 1.2rem;
+}
 
-    .hero-left h1 {
-      align-self: center;      /* Center middle */
-      font-size: 48px;
-      margin: 0;
-    }
+.hero-left h2 {
+  margin: 0;
+  font-size: 2.5rem;
+  color: white;
+}
 
-    .hero-left .role {
-      color: gold;
-      align-self: flex-end;    /* Bottom right */
-      margin: 0;
-    }
+.hero-left h1.role {
+  color: #d4a937;
+  margin: 0;
+  font-size: 3rem;
+}
+
+/* Social Links Row */
+.social-links {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.icon-placeholder {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  font-weight: bold;
+  font-size: 14px;
+  transition: transform 0.3s ease;
+}
+
+.icon-placeholder img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+.icon-placeholder:hover {
+  transform: translateY(-5px);
+}
 
     .hero-image {
       width: 100%;
@@ -171,7 +193,7 @@
     }
 
     .about-text h2 {
-      color: gold;
+      color: #d4a937;
       margin-bottom: 20px;
     }
 
@@ -185,7 +207,7 @@
     .skills-title {
       padding: 60px 0 20px 60px;
       font-size: 32px;
-      color: gold;
+      color: #d4a937;
     }
 
     /* MAIN CONTAINER */
@@ -203,21 +225,21 @@
     .skill-category h3 {
       margin-bottom: 20px;
       font-size: 18px;
-      color: gold;
+      color: #d4a937;
     }
 
     /* GRID FOR ICONS */
     .skill-row {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
-      gap: 30px;
+      gap: 10px;
     }
 
     /* CIRCLE CARD */
     .skill-card {
       position: relative;
-      width: 90px;
-      height: 90px;
+      width: 60px;
+      height: 60px;
       border-radius: 50%;
       background: #111;
       display: flex;
@@ -230,12 +252,12 @@
 
     .skill-card:hover {
       transform: scale(1.1);
-      box-shadow: 0 0 10px gold;
+      box-shadow: 0 0 10px #d4a937;
     }
 
     .skill-card img {
-      width: 60%;
-      height: 60%;
+      width: 100%;
+      height: auto;
       object-fit: contain;
     }
 
@@ -264,7 +286,7 @@
    
  /* PROJECT SECTION */
  /* ===== TITLE ===== */
-    .projects-title { padding: 60px 0 0 60px; font-size: 32px; color: gold; }
+    .projects-title { padding: 60px 0 0 60px; font-size: 32px; color: #d4a937; }
 
     /* ===== GRID CONTAINER ===== */
     .projects-container {
@@ -317,8 +339,8 @@
 
     .project-card:hover .overlay { bottom: 0; }
 
-    .overlay h3 { color: gold; margin-bottom: 10px; }
-    .overlay p { font-size: 14px; color: white; }
+    .overlay h3 { color: #d4a937; margin-bottom: 10px; }
+    .overlay p { font-size: 14px; color: #000000; }
 
     /* ===== LINK WRAPPER ===== */
     .card-link { text-decoration: none; color: inherit; }
@@ -328,7 +350,7 @@
     .blogs-title {
       padding: 60px 0 0 60px;
       font-size: 32px;
-      color: gold;
+      color: #d4a937;
     }
 
     /* ===== GRID ===== */
@@ -375,8 +397,13 @@
       align-items: center;
     }
 
-    .blog-content h2 {
-      font-size: 18px;
+    .blogs-container a {
+      color: #ffff;
+      text-decoration: none;
+     }
+
+    .blogs-container a .blog-card .blog-content h3 {
+      font-size: 14px;
       line-height: 1.4;
     }
 
@@ -386,7 +413,7 @@
     .exp-title {
       padding: 60px 0 0 60px;
       font-size: 32px;
-      color: gold;
+      color: #d4a937;
     }
 
     /* ===== CONTAINER ===== */
@@ -405,7 +432,7 @@
       border-radius: 12px;
       padding: 30px;
       transition: 0.3s;
-      border-left: 4px solid gold;
+      border-left: 4px solid #d4a937;
     }
 
     .exp-card:hover {
@@ -425,7 +452,7 @@
     }
 
     .exp-company {
-      color: gold;
+      color: #d4a937;
       margin-top: 5px;
     }
 
@@ -510,7 +537,7 @@
 
 .footer-right img:hover {
   transform: scale(1.1);
-  box-shadow: 0 0 8px gold;
+  box-shadow: 0 0 8px #d4a937;
 }
 
 .footer-top {
@@ -535,30 +562,37 @@
 
   <!-- NAVBAR -->
   <nav class="navbar">
-    <div class="logo"><img src="images/logo.png"></div>
+    <div class="logo"><a href="#"><img src="images/logo.png"></a></div>
 
     <div class="nav-center">
-      <a href="#">About</a>
-      <a href="#">Skills</a>
-      <a href="#">Projects</a>
-      <a href="#">Blog</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#blogs">Blog</a>
     </div>
 
     <a href="#" class="cv-btn">
       Download CV
-      <div class="download-icon"></div>
     </a>
   </nav>
 
   <!-- HERO -->
   <section class="hero">
 
-    <!-- LEFT TEXT -->
-    <div class="hero-left">
-      <h2>Hi there , I'm</h2>
-      <h1>NITHESH S P</h1>
-      <h2 class="role">DEVOPS ENGINEER</h2>
+      <!-- LEFT TEXT -->
+  <div class="hero-left">
+    <h3>Hi there, I'm</h3>
+    <h2>NITHESH S P</h2>
+    <h1 class="role">DEVOPS ENGINEER</h1>
+    
+    <!-- SOCIAL LOGOS -->
+    <div class="social-links">
+      <a href="https://www.linkedin.com/in/nithesh-s-p/"><div class="icon-placeholder"><img src="images/linkedin_logo.png"></div></a>
+      <a href="https://github.com/Nithesh-sp"><div class="icon-placeholder"><img src="images/github_logo.png"></div></a>
+      <a href="#" onclick="copyText('+91 7483217156')"><div class="icon-placeholder"><img src="images/phone_logo.png"></div></a>
+      <a href="#" onclick="copyText('nitheshsp2022@gmail.com')"><div class="icon-placeholder"><img src="images/email_logo.png"></div></a>
     </div>
+  </div>
 
     <!-- CENTER IMAGE -->
     <div class="hero-image"><img src="images/Nithesh_hero.png"></div>
@@ -574,7 +608,7 @@
 
    <!-- ABOUT SECTION -->
 
-  <section class="about">
+  <section class="about" id="about">
 
     <!-- LEFT IMAGE -->
     <div class="about-image">
@@ -595,7 +629,7 @@
   </section>
  
 <!-- SKILLS SECTION -->
-<h2 class="skills-title">Skills</h2>
+<h2 class="skills-title" id="skills">Skills</h2>
 
   <section class="skills-wrapper">
 
@@ -603,11 +637,8 @@
     <div class="skill-category">
       <h3>Continuous Integration & Continuous Deployment (CI/CD)</h3>
       <div class="skill-row">
-        <div class="skill-card"><img src="https://via.placeholder.com/60"><div class="skill-overlay">Jenkins</div></div>
-        <div class="skill-card"><img src="https://via.placeholder.com/60"><div class="skill-overlay">GitHub Actions</div></div>
-        <div class="skill-card"><img src="https://via.placeholder.com/60"><div class="skill-overlay">GitLab CI</div></div>
-        <div class="skill-card"><img src="https://via.placeholder.com/60"><div class="skill-overlay">ArgoCD</div></div>
-        <div class="skill-card"><img src="https://via.placeholder.com/60"><div class="skill-overlay">CircleCI</div></div>
+        <div class="skill-card"><img src="images/jenkins_logo.png"><div class="skill-overlay">Jenkins</div></div>
+        <div class="skill-card"><img src="images/github_actions_logo.png"><div class="skill-overlay">GitHub Actions</div></div>
       </div>
     </div>
 
@@ -615,11 +646,8 @@
     <div class="skill-category">
       <h3>Containerization & Orchestration</h3>
       <div class="skill-row">
-        <div class="skill-card"><img src="https://via.placeholder.com/60"><div class="skill-overlay">Docker</div></div>
-        <div class="skill-card"><img src="https://via.placeholder.com/60"><div class="skill-overlay">Kubernetes</div></div>
-        <div class="skill-card"><img src="https://via.placeholder.com/60"><div class="skill-overlay">Helm</div></div>
-        <div class="skill-card"><img src="https://via.placeholder.com/60"><div class="skill-overlay">OpenShift</div></div>
-        <div class="skill-card"><img src="https://via.placeholder.com/60"><div class="skill-overlay">Docker Swarm</div></div>
+        <div class="skill-card"><img src="images/docker_logo.png"><div class="skill-overlay">Docker</div></div>
+        <div class="skill-card"><img src="images/k8s_logo.png"><div class="skill-overlay">Kubernetes</div></div>
       </div>
     </div>
 
@@ -627,11 +655,8 @@
     <div class="skill-category">
       <h3>Infrastructure as Code (IaC)</h3>
       <div class="skill-row">
-        <div class="skill-card"><img src="https://via.placeholder.com/60"><div class="skill-overlay">Terraform</div></div>
-        <div class="skill-card"><img src="https://via.placeholder.com/60"><div class="skill-overlay">Ansible</div></div>
-        <div class="skill-card"><img src="https://via.placeholder.com/60"><div class="skill-overlay">CloudFormation</div></div>
-        <div class="skill-card"><img src="https://via.placeholder.com/60"><div class="skill-overlay">Pulumi</div></div>
-        <div class="skill-card"><img src="https://via.placeholder.com/60"><div class="skill-overlay">Vagrant</div></div>
+        <div class="skill-card"><img src="images/ansible_logo.png"><div class="skill-overlay">Ansible</div></div>
+        <div class="skill-card"><img src="images/terraform_logo.png"><div class="skill-overlay">Terraform</div></div>
       </div>
     </div>
 
@@ -639,11 +664,8 @@
     <div class="skill-category">
       <h3>Monitoring & Observability</h3>
       <div class="skill-row">
-        <div class="skill-card"><img src="https://via.placeholder.com/60"><div class="skill-overlay">Prometheus</div></div>
-        <div class="skill-card"><img src="https://via.placeholder.com/60"><div class="skill-overlay">Grafana</div></div>
-        <div class="skill-card"><img src="https://via.placeholder.com/60"><div class="skill-overlay">ELK Stack</div></div>
-        <div class="skill-card"><img src="https://via.placeholder.com/60"><div class="skill-overlay">Datadog</div></div>
-        <div class="skill-card"><img src="https://via.placeholder.com/60"><div class="skill-overlay">New Relic</div></div>
+        <div class="skill-card"><img src="images/prometheus_logo.png"><div class="skill-overlay">Prometheus</div></div>
+        <div class="skill-card"><img src="images/grafana_logo.png"><div class="skill-overlay">Grafana</div></div>
       </div>
     </div>
 
@@ -651,11 +673,7 @@
     <div class="skill-category">
       <h3>Cloud Computing & Networking</h3>
       <div class="skill-row">
-        <div class="skill-card"><img src="https://via.placeholder.com/60"><div class="skill-overlay">AWS</div></div>
-        <div class="skill-card"><img src="https://via.placeholder.com/60"><div class="skill-overlay">Azure</div></div>
-        <div class="skill-card"><img src="https://via.placeholder.com/60"><div class="skill-overlay">GCP</div></div>
-        <div class="skill-card"><img src="https://via.placeholder.com/60"><div class="skill-overlay">VPC</div></div>
-        <div class="skill-card"><img src="https://via.placeholder.com/60"><div class="skill-overlay">DNS</div></div>
+        <div class="skill-card"><img src="images/aws_logo.png"><div class="skill-overlay">AWS</div></div>
       </div>
     </div>
 
@@ -663,11 +681,8 @@
     <div class="skill-category">
       <h3>Security (DevSecOps)</h3>
       <div class="skill-row">
-        <div class="skill-card"><img src="https://via.placeholder.com/60"><div class="skill-overlay">Trivy</div></div>
-        <div class="skill-card"><img src="https://via.placeholder.com/60"><div class="skill-overlay">SonarQube</div></div>
-        <div class="skill-card"><img src="https://via.placeholder.com/60"><div class="skill-overlay">Snyk</div></div>
-        <div class="skill-card"><img src="https://via.placeholder.com/60"><div class="skill-overlay">OWASP</div></div>
-        <div class="skill-card"><img src="https://via.placeholder.com/60"><div class="skill-overlay">Vault</div></div>
+        <div class="skill-card"><img src="images/trivy_logo.png"><div class="skill-overlay">Trivy</div></div>
+        <div class="skill-card"><img src="images/vault_logo.png"><div class="skill-overlay">Vault</div></div>
       </div>
     </div>
 
@@ -675,18 +690,18 @@
 
 
 <!-- PROJECT SECTION -->
-  <h2 class="projects-title">Projects</h2>
+  <h2 class="projects-title" id="projects">Projects</h2>
 
   <!-- GRID -->
   <section class="projects-container">
 
     <!-- CARD 1 -->
-    <a href="https://github.com/" target="_blank" class="card-link">
+    <a href="https://github.com/Nithesh-sp/aws-multi-az-eks-jenkins-cicd-pipeline" target="_blank" class="card-link">
       <div class="project-card">
-        <img src="https://via.placeholder.com/400x300" alt="Architecture Diagram">
+        <img src="images/MUL_AZ_DP.png" alt="Architecture Diagram">
         <div class="overlay">
-          <h3>Project 1</h3>
-          <p>CI/CD pipeline with Docker & Jenkins</p>
+          <h3>EKS-Based CI/CD Pipeline (Multi-AZ)</h3>
+          <p>Automated CI/CD on AWS EKS using Jenkins, Docker, and Kubernetes with zero-downtime deployments and ECR integration.</p>
         </div>
       </div>
     </a>
@@ -715,51 +730,34 @@
 </section>
  
 <!-- BLOG SECTION -->
-  <h2 class="blogs-title">Blogs</h2>
+  <h2 class="blogs-title" id="blogs">Blogs</h2>
 
   <!-- GRID -->
   <section class="blogs-container">
 
     <!-- BLOG 1 -->
-    <div class="blog-card">
-      <div class="blog-image"><img src="https://via.placeholder.com/400x300"></div>
-      <div class="blog-content"><h2>Understanding CI/CD Pipelines</h2></div>
+    <a href="https://medium.com/@nithesh2022/git-core-what-actually-happens-with-branches-merge-and-rebase-35e1af43c058">
+     <div class="blog-card">
+      <div class="blog-image"><img src="images/git_core.png"></div>
+      <div class="blog-content"><h3>Git Core: What Actually Happens with Branches, Merge, and Rebase</h3></div>
     </div>
+   </a>
 
     <!-- BLOG 2 -->
-    <div class="blog-card">
+    <a><div class="blog-card">
       <div class="blog-image"><img src="https://via.placeholder.com/400x300"></div>
-      <div class="blog-content"><h2>Docker for Beginners</h2></div>
-    </div>
+      <div class="blog-content"><h3>Docker for Beginners</h3></div>
+    </div></a>
 
     <!-- BLOG 3 -->
-    <div class="blog-card">
+    <a><div class="blog-card">
       <div class="blog-image"><img src="https://via.placeholder.com/400x300"></div>
-      <div class="blog-content"><h2>Kubernetes Basics Explained</h2></div>
-    </div>
-
-    <!-- BLOG 4 -->
-    <div class="blog-card">
-      <div class="blog-image"><img src="https://via.placeholder.com/400x300"></div>
-      <div class="blog-content"><h2>Terraform for Infrastructure</h2></div>
-    </div>
-
-    <!-- BLOG 5 -->
-    <div class="blog-card">
-      <div class="blog-image"><img src="https://via.placeholder.com/400x300"></div>
-      <div class="blog-content"><h2>Monitoring with Prometheus</h2></div>
-    </div>
-
-    <!-- BLOG 6 -->
-    <div class="blog-card">
-      <div class="blog-image"><img src="https://via.placeholder.com/400x300"></div>
-      <div class="blog-content"><h2>NGINX Load Balancing Guide</h2></div>
-    </div>
-
+      <div class="blog-content"><h3>Kubernetes Basics Explained</h3></div>
+    </div></a>
   </section>
 
    <!-- EXPERIENCE SECTION -->
-  <h2 class="exp-title">Experience</h2>
+  <h2 class="exp-title" id="experience">Experience</h2>
 
   <!-- CONTENT -->
   <section class="exp-container">
@@ -768,8 +766,8 @@
     <div class="exp-card">
       <div class="exp-header">
         <div class="exp-role">DevOps Engineer</div>
-        <div class="exp-company">Company One</div>
-        <div class="exp-duration">Jan 2024 – Present</div>
+        <div class="exp-company">JPL (Jio platforms limited)</div>
+        <div class="exp-duration">Oct 2023 – Present</div>
       </div>
 
       <div class="exp-desc">
@@ -783,9 +781,9 @@
     <!-- EXPERIENCE 2 -->
     <div class="exp-card">
       <div class="exp-header">
-        <div class="exp-role">Junior DevOps Engineer</div>
-        <div class="exp-company">Company Two</div>
-        <div class="exp-duration">Jun 2023 – Dec 2023</div>
+        <div class="exp-role">Andorid Developer</div>
+        <div class="exp-company">JPL (Jio platforms limited)</div>
+        <div class="exp-duration">Jun 2023 – Sep 2023</div>
       </div>
 
       <div class="exp-desc">
@@ -805,28 +803,41 @@
     <!-- LEFT -->
     <div class="footer-left">
       <div class="location-icon"><img src="images/location_logo.png" alt="location"></div>
-      <div class="location-text">Your Location Here</div>
+      <div class="location-text">Bengaluru , Karnataka , India</div>
     </div>
 
     <!-- CENTER -->
     <div class="footer-center">
-      <div>Email: youremail@example.com</div>
-      <div>Phone: +91 00000 00000</div>
+      <div></div>
+      <div></div>
     </div>
 
     <!-- RIGHT -->
     <div class="footer-right">
-      <a href="#" target="_blank"><img src="images/linkedin_logo.png" alt="LinkedIn"></a>
-      <a href="#" target="_blank"><img src="images/github_logo.png" alt="GitHub"></a>
+      <a href="https://www.linkedin.com/in/nithesh-s-p/" target="_blank"><img src="images/linkedin_logo.png" alt="LinkedIn"></a>
+      <a href="https://github.com/Nithesh-sp" target="_blank"><img src="images/github_logo.png" alt="GitHub"></a>
+      <a href="#footer-bottom" onclick="copyText('+91 7483217156')"><img src="images/phone_logo.png" alt="Phone"></a>
+      <a href="#footer-bottom" onclick="copyText('nitheshsp2022@gmail.com')"><img src="images/email_logo.png" alt="Email"></a>
+     
+
     </div>
   </div>
 
   <!-- Bottom Section: Separate line -->
-  <div class="footer-bottom">
+  <div class="footer-bottom" id="footer-bottom">
     © 2026 Nithesh S P. All rights reserved.
   </div>
 </footer>
 
+<script>
+  function copyText(text) {
+    navigator.clipboard.writeText(text).then(() => {
+      alert("Copied: " + text);
+    }).catch(err => {
+      console.error("Failed to copy", err);
+    });
+  }
+</script>
 
 
 </body>
