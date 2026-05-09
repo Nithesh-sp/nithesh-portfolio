@@ -456,7 +456,7 @@
 }
 
 .footer-container {
-  background: #111;
+  
   color: white;
   margin-top: 80px;
   border-top: 1px solid rgba(255, 215, 0, 0.2);
@@ -473,8 +473,13 @@
 .location-icon {
   width: 20px;
   height: 20px;
-  background: gray; /* dummy */
   border-radius: 4px;
+}
+
+.location-icon img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
 }
 
 .location-text {
@@ -498,7 +503,7 @@
 .footer-right img {
   width: 28px;
   height: 28px;
-  background: gray; /* placeholder */
+  
   border-radius: 6px;
   transition: 0.3s;
 }
@@ -530,7 +535,7 @@
 
   <!-- NAVBAR -->
   <nav class="navbar">
-    <div class="logo"><img src="logo.png"></div>
+    <div class="logo"><img src="images/logo.png"></div>
 
     <div class="nav-center">
       <a href="#">About</a>
@@ -556,7 +561,7 @@
     </div>
 
     <!-- CENTER IMAGE -->
-    <div class="hero-image"><img src="Nithesh_hero.png"></div>
+    <div class="hero-image"><img src="images/Nithesh_hero.png"></div>
 
     <!-- RIGHT TEXT -->
     <div class="hero-right">
@@ -573,7 +578,7 @@
 
     <!-- LEFT IMAGE -->
     <div class="about-image">
-      <img src="about_me.png" alt="About Image">
+      <img src="images/about_me.png" alt="About Image">
     </div>
 
     <!-- RIGHT TEXT -->
@@ -799,7 +804,7 @@
   <div class="footer-top">
     <!-- LEFT -->
     <div class="footer-left">
-      <div class="location-icon"></div>
+      <div class="location-icon"><img src="images/location_logo.png" alt="location"></div>
       <div class="location-text">Your Location Here</div>
     </div>
 
@@ -811,8 +816,8 @@
 
     <!-- RIGHT -->
     <div class="footer-right">
-      <a href="#" target="_blank"><img src="linkedin.png" alt="LinkedIn"></a>
-      <a href="#" target="_blank"><img src="github.png" alt="GitHub"></a>
+      <a href="#" target="_blank"><img src="images/linkedin_logo.png" alt="LinkedIn"></a>
+      <a href="#" target="_blank"><img src="images/github_logo.png" alt="GitHub"></a>
     </div>
   </div>
 
