@@ -62,7 +62,24 @@
       color: white;
     }
 
-    .cv-btn {
+    
+	.hamburger {
+       display: none;
+       flex-direction: column;
+       cursor: pointer;
+       gap: 5px;
+       justify-self: end;
+     }
+     
+     .hamburger span {
+       width: 25px;
+       height: 3px;
+       background: #d4a937;
+       transition: 0.3s;
+     }
+
+	
+	.cv-btn {
       justify-self: end;
       display: flex;
       align-items: center;
@@ -80,6 +97,93 @@
       background: #d4a937;
       color: black;
     }
+	
+	/* Desktop CV visible */
+    .desktop-cv {
+      display: flex;
+    }
+    
+    /* Mobile CV hidden by default */
+    .mobile-cv {
+      display: none;
+    }
+	
+	/* ANIMATION TO CROSS */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+
+/* MOBILE VIEW */
+@media (max-width: 768px) {
+
+  .navbar {
+    grid-template-columns: 1fr auto;
+    padding: 15px 20px;
+  }
+   
+   .logo {
+    width: 90px;
+    height: 50px;
+  }
+   
+  .nav-center {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+    /* hidden state */
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+  }
+
+  .nav-center.active {
+    max-height: 400px; /* enough to show items */
+    padding: 20px 0;
+  }
+
+  .nav-center a {
+    font-size: 14px;
+  }
+
+  
+ /* Hide desktop CV */
+  .desktop-cv {
+    display: none;
+  }
+  
+  .mobile-cv {
+    display: flex;
+    margin-top: 10px;
+  }
+
+  .mobile-cv:active {
+      background: #d4a937;
+      color: black;
+    }
+
+
+  /* Show hamburger */
+  .hamburger {
+    display: flex;
+  }
+ }
+	
 
     /* ===== HERO SECTION ===== */
     .hero {
@@ -148,8 +252,7 @@
 
     .hero-image {
       width: 100%;
-      height: 80vh;
-      background: gray;
+      height: auto;
       border-radius: 20px;
       margin: auto;
     }
@@ -165,9 +268,92 @@
       color: white;
     }
     
+	.hero-right p {
+  line-height: 1.6;
+  font-style: italic;
+}
+	
     .hero-right span {
     float: right;
     }
+	
+@media (max-width: 768px) {
+
+  .hero {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    padding: 30px 20px;
+    margin-top: 5vh;
+    text-align: center;
+  }
+
+  /* LEFT TEXT */
+  .hero-left {
+    align-items: center;
+    gap: 8px;
+	margin-bottom: 20px;
+  }
+
+  .hero-left h3 {
+    font-size: 0.7rem;
+  }
+
+  .hero-left h2 {
+    font-size: 1.6rem;
+  }
+
+  .hero-left h1.role {
+    font-size: 1.8rem;
+  }
+
+  /* SOCIAL ICONS */
+  
+   .icon-placeholder {
+    width: 24px;
+    height: 24px;
+  }
+  
+  
+  .social-links {
+    justify-content: center;
+    gap: 15px;
+	 margin-bottom: 20px;
+	
+  }
+
+
+  /* IMAGE */
+  .hero-image {
+    width: 90%;
+    height: auto;
+	margin-top: 20px; 
+  }
+
+  .hero-image img {
+    border-radius: 15px;
+  }
+
+  /* RIGHT TEXT */
+  .hero-right {
+    padding: 0;
+    font-size: 14px;
+    margin-top: 10px;
+  }
+  
+   .hero-right p {
+  line-height: 1.6;
+  font-style: italic;
+}
+
+  .hero-right span {
+    float: none;
+    display: block;
+    margin-top: 10px;
+    text-align: center;
+    color: gold;
+  }
+}
 
 /* ===== ABOUT SECTION ===== */
     .about {
@@ -177,11 +363,14 @@
       padding: 40px 60px;
       gap: 10%; /* 10% spacing between image and text */
     }
-
+     
+	.about-title {
+	  display: none;
+	 }
+	 
     .about-image {
       width: 40%;
       height: 100%;
-      background: gray;
       border-radius: 20px;
     }
 
@@ -204,6 +393,51 @@
     .about-text p {
       line-height: 1.6;
     }
+  
+  
+    @media (max-width: 768px) {
+
+  .about {
+    flex-direction: column;
+    height: auto;
+    padding: 30px 20px;
+    gap: 20px;
+    align-items: center;
+  }
+  
+  .about-title {
+     display: flex;
+    width: 100%;
+    text-align: left;   /* top-left as you wanted */
+    font-size: 24px;
+    margin-bottom: 10px;
+	color: #d4a937;
+  }
+
+  /* IMAGE */
+  .about-image {
+    width: 80%;
+    height: 250px;
+  }
+
+  /* TEXT */
+  .about-text {
+    width: 100%;
+    text-align: center;
+  }
+   
+   .desktop {
+    display: none;
+   }
+  
+  .about-text p {
+    font-size: 14px;
+    line-height: 1.6;
+    padding: 0 10px;
+  }
+ 
+  
+}
   
   /* Skills section */
 
@@ -288,6 +522,48 @@
     .skill-card:hover .skill-overlay {
       opacity: 1;
     }
+	
+	
+  @media (max-width: 768px) {
+
+  /* SECTION TITLE */
+  .skills-title {
+    font-size: 24px;
+    padding: 40px 20px 10px;
+  }
+
+  /* WRAPPER */
+  .skills-wrapper {
+    padding: 20px;
+  }
+
+  /* CATEGORY TITLE */
+  .skill-category h3 {
+    font-size: 14px;
+    line-height: 1.4;
+    margin-bottom: 15px;
+  }
+
+  /* GRID */
+  .skill-row {
+    grid-template-columns: repeat(3, 1fr); /* better fit for mobile */
+    gap: 15px;
+    justify-items: center;
+  }
+
+  /* ICON SIZE */
+  .skill-card {
+    width: 55px;
+    height: 55px;
+  }
+
+  /* OVERLAY TEXT */
+  .skill-overlay {
+    font-size: 10px;
+    padding: 3px;
+  }
+
+}
    
  /* PROJECT SECTION */
  /* ===== TITLE ===== */
@@ -349,6 +625,41 @@
 
     /* ===== LINK WRAPPER ===== */
     .card-link { text-decoration: none; color: inherit; }
+	
+	
+	
+   @media (max-width: 768px) {
+
+  /* TITLE */
+  .projects-title {
+    font-size: 24px;
+    padding: 40px 20px 10px;
+    text-align: left;
+  }
+
+  /* GRID → SINGLE COLUMN */
+  .projects-container {
+    grid-template-columns: 1fr;   /* 1 project per row */
+    padding: 20px;
+    gap: 20px;
+  }
+
+  /* CARD SIZE */
+  .project-card {
+    height: 220px; /* slightly taller for readability */
+  }
+
+  /* TEXT INSIDE OVERLAY */
+  .overlay h3 {
+    font-size: 16px;
+  }
+
+  .overlay p {
+    font-size: 13px;
+  }
+
+}
+   
 
    /* BLOG SECTION */
    /* ===== TITLE ===== */
@@ -411,6 +722,45 @@
       font-size: 14px;
       line-height: 1.4;
     }
+	
+	@media (max-width: 768px) {
+
+  /* TITLE */
+  .blogs-title {
+    font-size: 24px;
+    padding: 40px 20px 10px;
+    text-align: left;
+  }
+
+  /* GRID → SINGLE COLUMN */
+  .blogs-container {
+    grid-template-columns: 1fr;
+    padding: 20px;
+    gap: 20px;
+  }
+
+  /* CARD SIZE */
+  .blog-card {
+    height: 240px; /* better proportion for mobile */
+  }
+
+  /* IMAGE */
+  .blog-image {
+    height: 60%;
+  }
+
+  /* CONTENT */
+  .blog-content {
+    height: 40%;
+    padding: 12px;
+  }
+
+  .blog-content h3 {
+    font-size: 15px;
+    line-height: 1.4;
+  }
+
+}
 
    /* EXPERIENCE SECTION */
 
@@ -473,6 +823,51 @@
       line-height: 1.6;
       color: #ddd;
     }
+    
+	@media (max-width: 768px) {
+
+  /* TITLE */
+  .exp-title {
+    font-size: 24px;
+    padding: 40px 20px 10px;
+    text-align: left;
+  }
+
+  /* CONTAINER */
+  .exp-container {
+    padding: 20px;
+    gap: 20px;
+  }
+
+  /* CARD */
+  .exp-card {
+    padding: 20px;
+    border-radius: 10px;
+  }
+
+  /* ROLE */
+  .exp-role {
+    font-size: 16px;
+  }
+
+  /* COMPANY */
+  .exp-company {
+    font-size: 14px;
+  }
+
+  /* DURATION */
+  .exp-duration {
+    font-size: 12px;
+  }
+
+  /* DESCRIPTION */
+  .exp-desc {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+}
+
 
   /* FOOTER SECTION */
 
@@ -561,6 +956,60 @@
   margin-top: 20px;
   border-top: 1px solid rgba(255, 255, 255, 0.05); /* Optional divider */
 }
+
+
+@media (max-width: 768px) {
+
+  /* MAIN FOOTER */
+  .footer-container {
+    padding: 20px;
+  }
+
+  /* STACK LAYOUT */
+  .footer-top {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+
+  /* LEFT (LOCATION) */
+  .footer-left {
+    justify-content: center;
+  }
+  
+  .location-icon {
+     width: 16px;
+    height: 16px;
+  }
+  
+  .location-text {
+    font-size: 13px;
+  }
+
+  /* CENTER (optional empty now) */
+  .footer-center {
+    font-size: 13px;
+  }
+
+  /* RIGHT (SOCIAL ICONS) */
+  .footer-right {
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .footer-right img {
+    width: 22px;
+    height: 22px;
+  }
+
+  /* COPYRIGHT */
+  .footer-bottom {
+    font-size: 12px;
+    padding-top: 15px;
+    margin-top: 15px;
+  }
+
+}
   </style>
 </head>
 <body>
@@ -569,14 +1018,24 @@
   <nav class="navbar">
     <div class="logo"><a href="#"><img src="images/logo.png"></a></div>
 
-    <div class="nav-center">
+    <div class="nav-center" id="navMenu">
       <a href="#about">About</a>
       <a href="#skills">Skills</a>
       <a href="#projects">Projects</a>
       <a href="#blogs">Blog</a>
+      <a href="resume.pdf" download class="cv-btn mobile-cv">
+      Download CV
+    </a>
+    </div>
+     
+    <div class="hamburger" onclick="toggleMenu()">
+     <span></span>
+     <span></span>
+     <span></span>
     </div>
 
-    <a href="#" class="cv-btn">
+
+    <a href="#" class="cv-btn desktop-cv">
       Download CV
     </a>
   </nav>
@@ -607,7 +1066,7 @@
       <p>
         " While sailing in this edgeless knowledge sea , Not a movement wasted ,But You have to find a way to move farward to avoid being adrift. " 
       </p>
-      <span>- Nithesh S P</span>
+      <span style:" color: #d4a937;">- Nithesh S P</span>
     </div>
 
   </section>
@@ -616,6 +1075,8 @@
 
   <section class="about" id="about">
 
+     <h2 class="about-title mobile">About Me</h2>
+
     <!-- LEFT IMAGE -->
     <div class="about-image">
       <img src="images/about_me.png" alt="About Image">
@@ -623,7 +1084,7 @@
 
     <!-- RIGHT TEXT -->
     <div class="about-text">
-      <h2>About Me</h2>
+      <h2 class="desktop">About Me</h2>
       <p>
         I’m a DevOps Engineer with 3 years of industry experience building and managing end-to-end CI/CD pipelines and cloud-native infrastructure. I have hands-on expertise across the complete DevOps lifecycle, including automation, containerization, orchestration, and monitoring. I’m driven to continuously deepen my knowledge and deliver scalable, reliable, and efficient systems.
       </p>
@@ -842,6 +1303,26 @@
   }
 </script>
 
+
+<script>
+  function toggleMenu() {
+    const menu = document.getElementById("navMenu");
+    const hamburger = document.querySelector(".hamburger");
+
+    menu.classList.toggle("active");
+    hamburger.classList.toggle("active");
+  }
+
+   document.querySelectorAll(".nav-center a").forEach(link => {
+    link.addEventListener("click", () => {
+      const menu = document.getElementById("navMenu");
+      const hamburger = document.querySelector(".hamburger");
+
+      menu.classList.remove("active");
+      hamburger.classList.remove("active");
+    });
+  });
+</script>
 
 </body>
 </html>
