@@ -383,7 +383,7 @@
     }
 
     .about-text {
-      width: 40%;
+      width: 100%;
     }
 
     .about-text h2 {
@@ -870,7 +870,131 @@
 }
 
 
-  /* FOOTER SECTION */
+  /* ===== CERTIFICATIONS SECTION ===== */
+.cert-title {
+  padding: 60px 0 0 60px;
+  font-size: 32px;
+  color: #d4a937;
+}
+.cert-container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 50px 60px 20px;
+}
+.cert-card {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  align-items: center;
+  gap: 35px;
+  padding: 30px;
+  background: #111;
+  border: 1px solid rgba(50, 108, 229, 0.45);
+  border-left: 4px solid #326ce5;
+  border-radius: 12px;
+  transition: 0.3s ease;
+}
+.cert-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 18px rgba(50, 108, 229, 0.2);
+}
+.cert-details .cert-label {
+  display: inline-block;
+  margin-bottom: 12px;
+  padding: 5px 10px;
+  color: #9dbbff;
+  background: rgba(50, 108, 229, 0.14);
+  border: 1px solid rgba(50, 108, 229, 0.35);
+  border-radius: 20px;
+  font-size: 12px;
+}
+.cert-details h3 {
+  margin-bottom: 10px;
+  color: #d4a937;
+  font-size: 22px;
+}
+.cert-details p {
+  color: #ccc;
+  line-height: 1.7;
+  font-size: 14px;
+}
+.cert-score {
+  margin-top: 14px;
+  color: #fff !important;
+}
+.cert-score strong { color: #9dbbff; }
+.cert-preview-link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  outline-offset: 5px;
+}
+.cert-preview {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 230px;
+  padding: 12px;
+  overflow: hidden;
+  background: #080d18;
+  border: 1px dashed #326ce5;
+  border-radius: 10px;
+  transition: 0.3s ease;
+}
+.cert-preview-link:hover .cert-preview {
+  border-style: solid;
+  box-shadow: 0 0 14px rgba(50, 108, 229, 0.3);
+}
+.cert-preview img {
+  display: block;
+  width: 100%;
+  max-height: 360px;
+  object-fit: contain;
+  border-radius: 5px;
+}
+.cert-image-placeholder {
+  display: flex;
+  min-height: 205px;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: #9dbbff;
+  text-align: center;
+}
+.cert-image-placeholder .placeholder-icon { font-size: 34px; }
+.cert-image-placeholder strong { color: #fff; font-size: 15px; }
+.cert-image-placeholder span { color: #aaa; font-size: 12px; }
+.cert-view-link {
+  display: inline-block;
+  margin-top: 18px;
+  color: #9dbbff;
+  font-size: 14px;
+  text-decoration: none;
+  border-bottom: 1px solid #326ce5;
+  padding-bottom: 3px;
+}
+.cert-view-link:hover { color: #fff; }
+
+@media (max-width: 768px) {
+  .cert-title {
+    font-size: 24px;
+    padding: 40px 20px 10px;
+    text-align: left;
+  }
+  .cert-container { padding: 20px; }
+  .cert-card {
+    grid-template-columns: 1fr;
+    gap: 22px;
+    padding: 20px;
+  }
+  .cert-details h3 { font-size: 19px; }
+  .cert-details p { font-size: 13px; }
+  .cert-preview { min-height: 190px; }
+}
+
+/* FOOTER SECTION */
 
   .footer {
   background: #111;
@@ -1024,6 +1148,7 @@
       <a href="#skills">Skills</a>
       <a href="#projects">Projects</a>
       <a href="#blogs">Blog</a>
+      <a href="#certifications">Certifications</a>
       <a href="Nithesh_S_P_DevOps_Resume.pdf" download class="cv-btn mobile-cv">
       Download CV
     </a>
@@ -1036,7 +1161,7 @@
     </div>
 
 
-    <a href="Nithesh_S_P_DevOps_Resume.pdf" class="cv-btn desktop-cv">
+    <a href="Nithesh S P devops resume.pdf" class="cv-btn desktop-cv">
       Download CV
     </a>
   </nav>
@@ -1083,8 +1208,8 @@
     <div class="about-text">
       <h2 class="desktop">About Me</h2>
       <p>
-        I’m a DevOps Engineer with 3 years of industry experience building and managing end-to-end CI/CD pipelines and cloud-native infrastructure. I have hands-on expertise across the complete DevOps lifecycle, including automation, containerization, orchestration, and monitoring. I’m driven to continuously deepen my knowledge and deliver scalable, reliable, and efficient systems.
-      </p>
+I'm a DevOps Engineer with 3+ years of experience in AWS, Kubernetes, CI/CD automation, and GitOps. Certified Kubernetes Administrator (CKA) with hands-on expertise in managing multi-environment EKS deployments using Jenkins, Docker, ECR, Helm, and Argo CD. Skilled in Terraform, Ansible, Kubernetes troubleshooting, and deployment automation to ensure reliable and highly available systems.
+</p>
     </div>
 
   </section>
@@ -1244,6 +1369,33 @@
 
   </section>
   
+<!-- CERTIFICATIONS SECTION -->
+  <h2 class="cert-title" id="certifications">Certifications</h2>
+
+  <section class="cert-container">
+    <div class="cert-card">
+      <div class="cert-details">
+        <span class="cert-label">Kubernetes Certification</span>
+        <h3>Certified Kubernetes Administrator (CKA)</h3>
+        <p>Issued by The Linux Foundation</p>
+        <p class="cert-score">Exam score: <strong>87%</strong></p>
+        <a class="cert-view-link" href="https://www.credly.com/badges/0d0bcf83-735c-41c5-8180-10c6f59c37f5/public_url" target="_blank" rel="noopener noreferrer">
+          View verified certificate ↗
+        </a>
+      </div>
+
+      <!-- Add your certificate image at images/cka_certificate.png. -->
+      <!-- Replace YOUR_CKA_CERTIFICATE_URL in both links with your certificate verification URL. -->
+      <a class="cert-preview-link" href="https://www.credly.com/badges/0d0bcf83-735c-41c5-8180-10c6f59c37f5/public_url" target="_blank" rel="noopener noreferrer" aria-label="Open CKA certificate verification page">
+        <div class="cert-preview">
+          <img src="images/CKA_CERT.png" alt="Certified Kubernetes Administrator certificate"
+               onerror="this.hidden = true; this.nextElementSibling.hidden = false;">
+          </div>
+        </div>
+      </a>
+    </div>
+  </section>
+
 <!-- FOOTER SECTION -->
 <footer class="footer-container">
   <!-- Top Section: Contains the 3 columns -->
